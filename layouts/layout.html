@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Treder rocks.">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/favicon114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/favicon72.png">
+  <title><%= title !== "" ? title : "Treder Rocks" %></title>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/site.css">
+  <%- include(atRoot("partial/_include_font.html"), {paths: ["/stylesheets/font/text-and-title-fonts.css"]}) %>
+</head>
+<body>
+
+  <div class="wrap">
+
+    <div class="content">
+      <%- contents %>
+    </div>
+    <div class="footer">
+      <ul>
+        <li><a href="http://dennistreder.de/imprint">Impressum</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+</body>
+</html>

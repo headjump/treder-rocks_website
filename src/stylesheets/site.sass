@@ -1,0 +1,159 @@
+@charset "utf-8"
+@import "normalize"
+@import "helper"
+@import "font/font-awesome.min"
+
+$padding: 12px
+$width: 580px
+$min_width_for_full_view: $width + 4 * $padding
+$min_height_for_fixed_footer: 800px
+$color_bg: #3b3b3b
+$color_text: #fff
+$color_link: #00ba76
+$color_link_hover: lighten($color_link,15%)
+$color_link_visited: darken($color_link,8%)
+$color_primary_text: #fff
+$color_light_text: #d2d2d2
+
+=textFont
+  font-family: 'open_sanslight', sans-serif
+=titleFont
+  font-family: 'roboto_condensedregular', sans-serif
+  line-height: 1.45em
+=thinDo
+  @media screen and (max-width: ($min_width_for_full_view - 1px))
+    @content
+
+body
+  +textFont
+  background: $color_bg
+  color: $color_primary_text
+  font-size: 1.1em
+  line-height: 1.45em
+  text-align: center
+
+  ul, ol
+    list-style-position: outside
+    margin-left: -0.5em
+    +thinDo
+      margin-left: -1em
+
+  a
+    color: $color_link
+    text-decoration: none
+    transition-property: text-shadow, color
+    transition-duration: 0.2s
+
+    &:visited
+      color: $color_link_visited
+    &:hover, &:visited:hover
+      text-shadow: 0 2px 0 rgba(0,0,0,0.25)
+      color: $color_link_hover
+      border-bottom: 1px dotted $color_link
+  
+  .wrap
+    margin: 0 auto
+    text-align: left
+    width: $width
+    +thinDo
+      width: auto
+      margin: $padding
+      border: none
+
+    .content
+      margin-top: $padding
+      margin-bottom: $padding
+      min-height: 70%
+
+      +thinDo
+        height: auto
+        margin-top: auto
+        margin-bottom: auto
+
+      h1,
+      h2,
+      h3,
+      h4
+        +titleFont
+        color: $color_primary_text
+
+      h1,
+      h2
+        font-weight: normal
+
+      h1
+        font-size: 2.5em
+        line-height: 1em
+        padding-top: 8 * $padding
+        padding-bottom: 6 * $padding
+        +thinDo
+          margin: 0
+          margin-bottom: 2 * $padding
+          text-align: center
+        +thinDo
+          display: block
+        .small,
+          +textFont
+          font-size: 0.5em
+          line-height: 1.45em
+          &.break-after
+            display: block
+
+      .about
+        color: $color_light_text
+        h1, h2, h3, h4
+          color: $color_primary_text
+
+      ul.featured
+        padding: 1.5 * $padding
+        background-color: darken($color_bg, 2.5%)
+        //+borderRadius($padding)
+        li
+          margin-left: 1em
+
+        +thinDo
+          margin-left: 0          
+
+  .footer
+    margin-top: 10em
+    margin-bottom: 2em
+    font-size: 0.75em
+
+    ul, ol
+      list-style-type: none
+      margin: 0
+      padding: 0
+      list-style-position: outside    
+      li
+        margin: 0
+        padding: 0
+        display: inline
+        margin-right: 1.5em
+        +thinDo
+          display: block
+          margin-right: 0
+
+    a
+      color: grey
+      transition-duration: 0.2s
+
+      &:visited
+        color: grey
+      &:hover, &:visited:hover
+        text-shadow: 0 2px 0 rgba(0,0,0,0.25)
+        color: white
+        border: none
+
+document,body,html
+  height: 100%
+  position: relative
+  box-sizing: border-box
+
+.wrap
+  padding-top: 1px
+  box-sizing: border-box
+  height: 100%
+
+.content
+  padding-top: 1px
+  box-sizing: border-box

@@ -1,0 +1,28 @@
+=boxShadow($x: 1px,$y: 1px,$blur: 3px,$color: #000)
+  -webkit-box-shadow: $x $y $blur $color
+  -moz-box-shadow: $x $y $blur $color
+  box-shadow: $x $y $blur $color
+
+=borderRadius($radius: 5px)
+  -moz-border-radius: $radius
+  -webkit-border-radius: $radius
+  border-radius: $radius
+
+=layout
+  _height: 1%
+  zoom: 1
+
+=codeFonts
+  font-family: Monaco, Consolas, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace
+
+=clearAfter
+  *display:                 inline-block
+  &:after
+    content:                " "
+    display:                block
+    height:                 0
+    clear:                  both
+    visibility:             hidden
+
+.clear
+  clear: both
